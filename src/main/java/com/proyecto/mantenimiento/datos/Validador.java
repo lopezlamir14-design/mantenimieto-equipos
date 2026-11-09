@@ -1,8 +1,5 @@
 package com.proyecto.mantenimiento.datos;
-
 public class Validador {
-
-    private Validador() { }
 
     public static String texto(String valor, String campo) {
         if (valor == null || valor.isBlank()) {
