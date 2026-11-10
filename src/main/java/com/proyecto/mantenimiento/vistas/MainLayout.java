@@ -1,11 +1,11 @@
 package com.proyecto.mantenimiento.vistas;
+
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
-
 public class MainLayout extends AppLayout {
 
     public MainLayout() {
@@ -15,9 +15,16 @@ public class MainLayout extends AppLayout {
         addToNavbar(new DrawerToggle(), titulo);
 
         SideNav menu = new SideNav();
-        SideNavItem equipos = new SideNavItem("Equipos", "");
-        equipos.setPrefixComponent(VaadinIcon.COG.create());
-        menu.addItem(equipos);
+        agregarOpcion(menu, "Equipos", "", VaadinIcon.COG);
+        agregarOpcion(menu, "Órdenes de trabajo", "ordenes", VaadinIcon.CLIPBOARD_TEXT);
+        agregarOpcion(menu, "Técnicos", "tecnicos", VaadinIcon.USER);
+        agregarOpcion(menu, "Repuestos", "repuestos", VaadinIcon.TOOLS);
         addToDrawer(menu);
+    }
+
+    private void agregarOpcion(SideNav menu, String texto, String ruta, VaadinIcon icono) {
+        SideNavItem opcion = new SideNavItem(texto, ruta);
+        opcion.setPrefixComponent(icono.create());
+        menu.addItem(opcion);
     }
 }

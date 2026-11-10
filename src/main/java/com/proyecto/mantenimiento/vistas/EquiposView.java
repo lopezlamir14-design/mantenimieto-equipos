@@ -88,6 +88,7 @@ public class EquiposView extends VerticalLayout {
         grid.setItems(resultado);
     }
     private void confirmarBorrado(Equipo equipo) {
+        
         ConfirmDialog dialogo = new ConfirmDialog();
         dialogo.setHeader("Eliminar equipo");
         dialogo.setText("¿Eliminar " + equipo.getNombre() + "? Esta acción no se puede deshacer.");
