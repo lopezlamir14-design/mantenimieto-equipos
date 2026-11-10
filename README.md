@@ -24,7 +24,7 @@ Curso: Lógica de Programación
 La primera vez se crea la carpeta con datos de ejemplo.
 
 Manual de uso
-### Equipos
+Equipos
 ![Equipos](capturas/equipos.png)
 Buscar, filtrar por estado, crear, editar y eliminar (con confirmación).
 ### Órdenes de trabajo
