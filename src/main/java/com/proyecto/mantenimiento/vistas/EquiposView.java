@@ -88,7 +88,10 @@ public class EquiposView extends VerticalLayout {
         grid.setItems(resultado);
     }
     private void confirmarBorrado(Equipo equipo) {
-        
+        if (GestorDatos.equipoTieneOrdenes(equipo.getCodigo())) {
+    Notification.show("No se puede eliminar: el equipo tiene ya órdenes de trabajo");
+    return;
+}
         ConfirmDialog dialogo = new ConfirmDialog();
         dialogo.setHeader("Eliminar equipo");
         dialogo.setText("¿Eliminar " + equipo.getNombre() + "? Esta acción no se puede deshacer.");
