@@ -1,5 +1,6 @@
 package com.proyecto.mantenimiento.datos;
-
+import com.proyecto.mantenimiento.modelo.FilaCosto;
+import java.time.LocalDate;
 import com.proyecto.mantenimiento.modelo.Equipo;
 import com.proyecto.mantenimiento.modelo.Orden;
 import com.proyecto.mantenimiento.modelo.Repuesto;
@@ -295,5 +296,51 @@ public class GestorDatos {
         }
         getOrdenes().remove(orden);
         guardarOrdenes();
+    }
+    // Todas las órdenes de un equipo
+    public static List<Orden> ordenesDeEquipo(String codigo) {
+        List<Orden> resultado = new ArrayList<>();
+        for (Orden orden : getOrdenes()) {
+            if (orden.getEquipoCodigo().equalsIgnoreCase(codigo)) {
+                resultado.add(orden);
+            }
+        }
+        return resultado;
+    }
+    public static List<Orden> ordenesProximas(int dias) {
+        LocalDate hoy = LocalDate.now();
+        LocalDate limite = hoy.plusDays(dias);
+        List<Orden> resultado = new ArrayList<>();
+        for (Orden orden : getOrdenes()) {
+            boolean abierta = !orden.getEstado().equals("Cerrada");
+            boolean enRango = !orden.getFecha().isBefore(hoy) && !orden.getFecha().isAfter(limite);
+            if (abierta && enRango) {
+                resultado.add(orden);
+            }
+        }
+        return resultado;
+    }
+    public static List<FilaCosto> costosPorEquipoYMes() {
+        List<FilaCosto> filas = new ArrayList<>();
+        for (Orden orden : getOrdenes()) {
+            String mes = orden.getFecha().getYear() + "-"
+                    + String.format("%02d", orden.getFecha().getMonthValue());
+
+            // Busca si ya existe la fila de ese equipo y ese mes
+            FilaCosto fila = null;
+            for (FilaCosto f : filas) {
+                if (f.getEquipo().equals(orden.getEquipoCodigo()) && f.getMes().equals(mes)) {
+                    fila = f;
+                    break;
+                }
+            }
+            // Si no existe, se crea
+            if (fila == null) {
+                fila = new FilaCosto(orden.getEquipoCodigo(), mes);
+                filas.add(fila);
+            }
+            fila.sumar(orden.getCostoTotal());
+        }
+        return filas;
     }
 }
