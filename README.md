@@ -24,17 +24,18 @@ Curso: Lógica de Programación
 La primera vez se crea la carpeta con datos de ejemplo.
 
 Manual de uso
+
 Equipos
-![Equipos](capturas/equipos.png)
+![Equipos](https://github.com/lopezlamir14-design/mantenimieto-equipos/blob/main/Captura%20de%20pantalla%202026-11-10%20172521.png)
 Buscar, filtrar por estado, crear, editar y eliminar (con confirmación).
-### Órdenes de trabajo
-![Órdenes](capturas/ordenes.png)
 Historial por equipo
 ![Historial](https://github.com/lopezlamir14-design/mantenimieto-equipos/blob/main/Captura%20de%20pantalla%202026-11-10%20172243.png)
 Reportes de costos
 ![Reportes](https://github.com/lopezlamir14-design/mantenimieto-equipos/blob/main/Captura%20de%20pantalla%20Costo%20Mantenimiento.png)
-### Técnicos y repuestos
+Técnicos 
 ![Técnicos](capturas/tecnicos.png)
+Repuestos
+![Repuestos](capturas/tecnicos.png)
 
 Componentes investigados
 - Accordion:historial del equipo con secciones de preventivos y correctivos.
