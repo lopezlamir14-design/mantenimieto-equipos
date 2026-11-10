@@ -33,7 +33,7 @@ Historial por equipo
 Reportes de costos
 ![Reportes](https://github.com/lopezlamir14-design/mantenimieto-equipos/blob/main/Captura%20de%20pantalla%20Costo%20Mantenimiento.png)
 Técnicos 
-![Técnicos](capturas/tecnicos.png)
+![Técnicos](https://github.com/lopezlamir14-design/mantenimieto-equipos/blob/main/Tecnicos.png)
 Repuestos
 ![Repuestos](capturas/tecnicos.png)
 
