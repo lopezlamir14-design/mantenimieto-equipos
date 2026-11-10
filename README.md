@@ -35,7 +35,7 @@ Reportes de costos
 Técnicos 
 ![Técnicos](https://github.com/lopezlamir14-design/mantenimieto-equipos/blob/main/Tecnicos.png)
 Repuestos
-![Repuestos](capturas/tecnicos.png)
+![Repuestos](https://github.com/lopezlamir14-design/mantenimieto-equipos/blob/main/Repuestos.png)
 
 Componentes investigados
 - Accordion:historial del equipo con secciones de preventivos y correctivos.
